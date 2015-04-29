@@ -8,4 +8,10 @@
 <resources>
     <string name="app_name">spotify-web-api-example</string>
     <string name="app_hint">Search for a track</string>
+
+    <string name="icon_content_description">icon_content_description</string>
+    <string name="bebo">Bebo title</string>
+    <string name="bebo_description">Bebo decription...</string>
+    <string name="youtube">Youtube title</string>
+    <string name="youtube_description">Youtube decription...</string>
 </resources>

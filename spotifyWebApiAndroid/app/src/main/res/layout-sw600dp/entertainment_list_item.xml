@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
+
+    <FrameLayout
+        android:id="@+id/imageFrame"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <include layout="@layout/image_16x9_small" />
+    </FrameLayout>
+
+<!--
+    <com.bskyb.nowtv.widgets.CustomTextView
+        android:id="@+id/title"
+        style="@style/title1.active.clickable"
+        android:textColor="@color/title1_active_selector"
+        android:duplicateParentState="true"
+        android:gravity="center_horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/imageFrame"
+        android:layout_marginTop="@dimen/collection_list_item_image_to_title_spacing"
+        android:singleLine="true"
+        android:ellipsize="end" />
+
+    <com.bskyb.nowtv.widgets.CustomTextView
+        android:id="@+id/seasonAndEpisodeNumbers"
+        style="@style/title1.inactive"
+        android:duplicateParentState="true"
+        android:gravity="center_horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/title"
+        android:singleLine="true"
+        android:ellipsize="end"
+        android:visibility="gone" />
+-->
+</RelativeLayout>

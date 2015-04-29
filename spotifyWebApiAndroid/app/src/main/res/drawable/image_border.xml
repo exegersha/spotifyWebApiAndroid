@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<shape
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:shape="rectangle">
+
+    <!-- This has been made a solid box rather than a border only stroke 
+        because some of the images are coming from the server with a slightly incorrect 
+        aspect ratio, meaning there is then a gap between the edge of the image and 
+        the border stroke -->
+
+    <solid android:color="@color/abc_background_cache_hint_selector_material_dark" />
+</shape>
