@@ -15,6 +15,8 @@ import widgets.ListViewItem;
 
 public class ListViewAdapter extends ArrayAdapter<ListViewItem> {
 
+    private int mCount = 20;
+
     public ListViewAdapter(Context context, List<ListViewItem> items) {
         super(context, R.layout.listview_item, items);
     }
@@ -58,5 +60,19 @@ public class ListViewAdapter extends ArrayAdapter<ListViewItem> {
         ImageView ivIcon;
         TextView tvTitle;
         TextView tvDescription;
+    }
+
+    /**
+     * AutoLoading List Fragment example: http://www.informit.com/articles/article.aspx?p=2066699&seqNum=4
+     *
+     */
+    public void addMoreItems(int count) {
+        mCount += count;
+        notifyDataSetChanged();
+    }
+
+    @Override
+    public int getCount() {
+        return mCount;
     }
 }
