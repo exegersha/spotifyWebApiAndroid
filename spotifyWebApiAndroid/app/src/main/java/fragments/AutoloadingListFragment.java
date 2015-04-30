@@ -5,12 +5,14 @@ import android.content.Context;
 import android.content.res.Resources;
 import android.os.Bundle;
 import android.os.Handler;
+import android.os.Looper;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.widget.AbsListView;
 import android.widget.AbsListView.OnScrollListener;
 
 import java.util.ArrayList;
+import java.util.FormatFlagsConversionMismatchException;
 import java.util.List;
 
 import adapters.ListViewAdapter;
@@ -20,7 +22,7 @@ import widgets.ListViewItem;
 public class AutoloadingListFragment extends ListFragment implements OnScrollListener {
 
     private final int AUTOLOAD_THRESHOLD = 4;
-    private final int MAXIMUM_ITEMS = 52;
+    private final int MAXIMUM_ITEMS = 60;
     private ListViewAdapter mAdapter;
     private View mFooterView;
     private Handler mHandler;
@@ -47,14 +49,11 @@ public class AutoloadingListFragment extends ListFragment implements OnScrollLis
         // initialize the items list
         mItems = new ArrayList<ListViewItem>();
         Resources resources = getResources();
-        mItems.add(new ListViewItem(resources.getDrawable(R.drawable.bebo_icon), getString(R.string.bebo), getString(R.string.bebo_description)));
-        mItems.add(new ListViewItem(resources.getDrawable(R.drawable.youtube_icon), getString(R.string.youtube), getString(R.string.youtube_description)));
-        mItems.add(new ListViewItem(resources.getDrawable(R.drawable.bebo_icon), getString(R.string.bebo), getString(R.string.bebo_description)));
-        mItems.add(new ListViewItem(resources.getDrawable(R.drawable.youtube_icon), getString(R.string.youtube), getString(R.string.youtube_description)));
-        mItems.add(new ListViewItem(resources.getDrawable(R.drawable.bebo_icon), getString(R.string.bebo), getString(R.string.bebo_description)));
-        mItems.add(new ListViewItem(resources.getDrawable(R.drawable.youtube_icon), getString(R.string.youtube), getString(R.string.youtube_description)));
-        mItems.add(new ListViewItem(resources.getDrawable(R.drawable.bebo_icon), getString(R.string.bebo), getString(R.string.bebo_description)));
-        mItems.add(new ListViewItem(resources.getDrawable(R.drawable.youtube_icon), getString(R.string.youtube), getString(R.string.youtube_description)));
+
+        for (int  i=0; i< MAXIMUM_ITEMS/2; i++) {
+            mItems.add(new ListViewItem(resources.getDrawable(R.drawable.bebo_icon), (i*2) +" "+ getString(R.string.bebo), getString(R.string.bebo_description)));
+            mItems.add(new ListViewItem(resources.getDrawable(R.drawable.youtube_icon), (i*2+1) +" "+ getString(R.string.youtube), getString(R.string.youtube_description)));
+        }
 
         // initialize the list adapter
         mAdapter = new ListViewAdapter(getActivity(), mItems);
